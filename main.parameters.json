@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "privrgname": {
+      "value": "rg-privateresolver"
+    },
+    "location": {
+      "value": "swedencentral"
+    },
+    "resname": {
+      "value": "dnspr002"
+    },
+    "inname": {
+      "value": "ibe01"
+    },
+    "outname": {
+      "value": "obe01"
+    },
+    "inboundsubnetname": {
+      "value": "inbound"
+    },
+    "outboundsubnetname": {
+      "value": "outbound"
+    },
+    "vnetname": {
+      "value": "vnet-hub-sc-001"
+    },
+    "vnetrg": {
+      "value": "hub-vnet"
+    },
+    "rulename": {
+      "value": "rulesetCorp"
+    },
+    "dnsrules": {
+      "value": [
+        {
+          "name": "contoso",
+          "properties": {
+            "forwardingRuleState": "Enabled",
+            "targetDnsServers": [
+              {
+                "ipaddress": "192.168.10.1"
+              },
+              {
+                "ipaddress": "192.168.10.2"
+              }
+            ],
+            "domainName": "contoso.com."
+          }
+        }
+      ]
+    },
+    "deployrules": {
+      "value": true
+    }
+  }
+}
